@@ -8,12 +8,31 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors:{
+        background:"var(--background)",
+        black:"var(--black)"
+      },
+      fontFamily:{
+        inverse:"var(--font-inverse)",
+        inter:"var(--font-inter)"
+      },
+      fontSize:{
+        '13px':'0.8125rem',
       },
     },
+    keyframes:{
+      rise:{
+        from:{
+          transform:"translateY(160px)"
+        },
+        to:{
+          transform:"translateY(0)"
+        }
+      }
+    },
+    animation:{
+      rise:"rise 200ms ease-in 510ms 1"
+    }
   },
   plugins: [],
 };
