@@ -1,15 +1,21 @@
 import { Typography } from "@/components/typography";
 import { cn } from "@/lib/utils";
+import { useNavbarState } from "@/states";
+import Link from "next/link";
 import { FC, ReactNode } from "react";
 
 interface NavItemProps {
-  isOpen: boolean;
   children: ReactNode;
+  href?: string;
 }
 
-export const NavItem: FC<NavItemProps> = ({ children, isOpen }) => {
+export const NavItem: FC<NavItemProps> = ({ children, href = "/" }) => {
+  const isOpen = useNavbarState((state) => state.isOpen);
   return (
-    <div className="w-max h-max overflow-hidden relative flex items-center justify-center group text-white px-1">
+    <Link
+      href={href}
+      className="w-max h-max overflow-hidden relative flex items-center justify-center group text-white px-1"
+    >
       <div
         style={{
           height: "5%",
@@ -27,6 +33,6 @@ export const NavItem: FC<NavItemProps> = ({ children, isOpen }) => {
       >
         {children}
       </Typography>
-    </div>
+    </Link>
   );
 };
