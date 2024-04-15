@@ -10,11 +10,11 @@ const config: Config = {
     extend: {
       colors:{
         background:"var(--background)",
-        black:"var(--black)"
       },
       fontFamily:{
         inverse:"var(--font-inverse)",
-        inter:"var(--font-inter)"
+        inter:"var(--font-inter)",
+        futura:"var(--font-futura)"
       },
       fontSize:{
         '13px':'0.8125rem',

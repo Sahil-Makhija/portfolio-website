@@ -10,10 +10,12 @@ interface NavItemProps {
 }
 
 export const NavItem: FC<NavItemProps> = ({ children, href = "/" }) => {
-  const isOpen = useNavbarState((state) => state.isOpen);
+  const { isOpen, setIsOpen } = useNavbarState((state) => state);
+
   return (
     <Link
       href={href}
+      onClick={() => setIsOpen(false)}
       className="w-max h-max overflow-hidden relative flex items-center justify-center group text-white px-1"
     >
       <div
@@ -25,10 +27,10 @@ export const NavItem: FC<NavItemProps> = ({ children, href = "/" }) => {
       />
       <Typography
         fontFamily={"inverse"}
-        style={{ transform: isOpen ? "translateY(0)" : "translateY(160px)" }}
-        className={cn(
-          "capitalize transition-transform duration-300 ease-out delay-500"
-        )}
+        style={{
+          transform: isOpen ? "translateY(0)" : "translateY(160px)",
+        }}
+        className={cn("transition-transform duration-300 ease-out delay-500")}
         fontSize={"D1"}
       >
         {children}

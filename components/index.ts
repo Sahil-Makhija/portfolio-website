@@ -1,2 +1,3 @@
 export * from './overlay-navbar';
 export * from './typography';
+export * from './follow-cursor'

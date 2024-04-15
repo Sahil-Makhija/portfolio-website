@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import { OverlayNavbar } from "@/components";
-
+import { FollowCursor, OverlayNavbar } from "@/components";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -12,6 +11,11 @@ const inter = Inter({
 const inverse = localFont({
   src: "../public/fonts/inverse.ttf",
   variable: "--font-inverse",
+});
+
+const futura = localFont({
+  src: "../public/fonts/futura.ttf",
+  variable: "--font-futura",
 });
 
 export const metadata: Metadata = {
@@ -27,8 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-background h-screen ${inter.className} ${inverse.variable}`}
+        className={`bg-background h-screen overflow-hidden ${inter.className} ${inverse.variable} ${futura.variable}`}
       >
+        <FollowCursor />
         <OverlayNavbar />
         {children}
       </body>

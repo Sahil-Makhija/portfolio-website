@@ -22,6 +22,7 @@ const typographyStyles = cva("text-inherit text-wrap", {
     fontFamily: {
       inter: "font-inter",
       inverse: "font-inverse",
+      futura: "font-futura",
     },
     fontSize: {
       D1: "text-9xl leading-tight tracking-wider ",
