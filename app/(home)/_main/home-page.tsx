@@ -1,5 +1,7 @@
 "use client";
 
+import { Home } from "./pages";
+
 const sectionIds = ["home", "about", "portfolio", "contact"];
 export const HomePage = () => {
   return (
@@ -7,11 +9,7 @@ export const HomePage = () => {
       style={{ scrollSnapType: "y mandatory" }}
       className="h-screen overflow-x-hidden overflow-y-scroll"
     >
-      <div
-        style={{ scrollSnapAlign: "start" }}
-        id={sectionIds[0]}
-        className="h-screen "
-      />
+      <Home />
       <div
         style={{ scrollSnapAlign: "start" }}
         id={sectionIds[1]}

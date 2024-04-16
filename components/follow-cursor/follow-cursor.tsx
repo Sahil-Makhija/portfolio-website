@@ -12,8 +12,8 @@ export const FollowCursor = () => {
       gsap.to(cursor, {
         x: e.clientX,
         y: e.clientY,
-        duration: 0.1,
-        // ease: "power2.out",
+        duration: 0.5,
+        ease: "power2.out",
       });
     };
 
@@ -33,7 +33,7 @@ export const FollowCursor = () => {
         transform: "translate(-50%, -50%)",
         mixBlendMode: "difference",
       }}
-      className="fixed top-0 left-0 size-20 bg-transparent rounded-full border-2 "
+      className="fixed top-0 left-0 size-12 bg-transparent rounded-full border-2 "
     />
   );
 };
