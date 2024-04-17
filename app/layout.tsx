@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-background h-screen ${inter.className} ${inverse.variable} ${futura.variable}`}
+        className={`bg-gradient-to-b from-background to-black h-screen ${inter.className} ${inverse.variable} ${futura.variable}`}
       >
         <FollowCursor />
         <OverlayNavbar />

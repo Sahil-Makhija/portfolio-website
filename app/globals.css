@@ -8,9 +8,10 @@ html {
 
 :root {
   --background:#072142;
+  --rose:#ff4d5a;
 }
 
-/* ::-webkit-scrollbar { 
+::-webkit-scrollbar { 
   display: none;
-} */
+}
 

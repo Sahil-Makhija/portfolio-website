@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors:{
         background:"var(--background)",
+        rose:"var(--rose)"
       },
       fontFamily:{
         inverse:"var(--font-inverse)",

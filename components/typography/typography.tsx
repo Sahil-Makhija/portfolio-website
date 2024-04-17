@@ -25,7 +25,7 @@ const typographyStyles = cva("text-inherit text-wrap", {
       futura: "font-futura",
     },
     fontSize: {
-      D1: "text-9xl leading-none tracking-wider ",
+      D1: "text-[120px] leading-none tracking-wider ",
       D2: "text-7xl leading-tight tracking-wide",
       h1: "text-5xl leading-normal",
       h2: "text-4xl leading-normal",
@@ -62,7 +62,7 @@ export const Typography: React.FC<TypographyProps> = ({
   className,
   style = {},
   gradientColor = false,
-  component: BaseComponent = "p",
+  component: BaseComponent = "span",
   ...restProps
 }) => {
   return (
