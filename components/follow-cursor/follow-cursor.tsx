@@ -17,10 +17,10 @@ export const FollowCursor = () => {
       });
     };
 
-    document.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mousemove", onMouseMove);
 
     return () => {
-      document.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mousemove", onMouseMove);
     };
   }, []);
 
