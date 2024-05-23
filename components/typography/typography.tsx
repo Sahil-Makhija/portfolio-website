@@ -17,7 +17,7 @@ const gradientColorStyles = {
   WebkitTextFillColor: "transparent",
 };
 
-const typographyStyles = cva("text-inherit text-wrap", {
+const typographyStyles = cva("text-white text-wrap", {
   variants: {
     fontFamily: {
       inter: "font-inter",

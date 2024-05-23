@@ -29,11 +29,10 @@ export const FollowCursor = () => {
       ref={cursorRef}
       style={{
         pointerEvents: "none",
-        zIndex: 9999,
         transform: "translate(-50%, -50%)",
         mixBlendMode: "difference",
       }}
-      className="fixed top-0 left-0 size-12 bg-transparent rounded-full border-2 "
+      className="fixed top-0 left-0 size-12 bg-transparent rounded-full border-2 border-neutral-600 z-50 "
     />
   );
 };

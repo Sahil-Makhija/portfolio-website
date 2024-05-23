@@ -1,8 +1,10 @@
 import { Typography } from "@/components";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import { useRef } from "react";
-export const Home = () => {
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+export const Contact = () => {
   const heroContainer = useRef<HTMLDivElement>(null);
   useGSAP(() => {
     if (!heroContainer.current) return;
@@ -26,14 +28,13 @@ export const Home = () => {
   return (
     <div className="h-screen py-20 flex justify-center items-center">
       <div className="flex px-12 max-w-screen-2xl overflow-hidden w-full  h-max justify-between text-white">
-        <div ref={heroContainer} className="flex flex-col gap-6 max-w-72">
+        <div ref={heroContainer} className="flex flex-col gap-6">
           <Typography
             fontFamily={"futura"}
             fontSize={"D1"}
             fontWeight={"medium"}
           >
-            SAHIL <br />
-            MAKHIJA
+            Get In Touch
           </Typography>
           <div className="relative h-6 w-36">
             <div className="h-1 w-20 rounded-s-sm rounded-e-sm left-0 absolute top-0  bg-rose" />
@@ -44,7 +45,7 @@ export const Home = () => {
             fontSize={"h3"}
             fontWeight={"medium"}
           >
-            web designer / Software Developer.
+            sahilmakhija667@gmail.com
           </Typography>
         </div>
       </div>

@@ -14,9 +14,9 @@ export const CirclePattern: React.FC<CirclePatternProps> = ({
   useEffect(() => {
     const handleCursorMove = (e: MouseEvent) => {
       gsap.to("#circle_container", {
-        x: (window.innerWidth - e.clientX) / 50,
-        y: (window.innerWidth - e.clientY) / 50,
-        duration: 1,
+        x: (window.innerWidth - e.clientX) / 30,
+        y: (window.innerWidth - e.clientY) / 30,
+        duration: 0.75,
         ease: "power.in",
       });
     };

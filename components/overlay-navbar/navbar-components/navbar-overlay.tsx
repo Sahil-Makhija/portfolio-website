@@ -20,8 +20,8 @@ export const NavbarOverlay: React.FC = () => {
     >
       <div className="h-full mx-auto w-max relative flex flex-col items-center justify-evenly">
         <NavItem href="#home">HOME</NavItem>
-        <NavItem href="#about">ABOUT US</NavItem>
         <NavItem>WORKS</NavItem>
+        <NavItem href="#about">ABOUT US</NavItem>
         <NavItem>CONTACT</NavItem>
       </div>
     </div>
