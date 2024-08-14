@@ -1,4 +1,5 @@
 import { Typography } from "@/components";
+import Link from "next/link";
 
 export const Portfolio = () => {
   return (
@@ -17,7 +18,7 @@ export const Portfolio = () => {
             <div className="h-1 w-20 rounded-s-sm rounded-e-sm left-0 absolute top-0  bg-rose" />
             <div className="h-1 w-20 rounded-s-sm rounded-e-sm right-0 absolute bottom-0  bg-rose" />
           </div>
-          {/* <Button>Show me more</Button> */}
+          <Link href={"/contact"}>Show me more</Link>
         </div>
       </div>
     </div>

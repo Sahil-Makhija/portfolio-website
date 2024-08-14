@@ -25,7 +25,7 @@ const typographyStyles = cva("text-white text-wrap", {
       futura: "font-futura",
     },
     fontSize: {
-      D1: "text-[120px] leading-none tracking-wider ",
+      D1: "md:text-[120px] text-7xl  leading-none tracking-wider ",
       D2: "text-7xl leading-tight tracking-wide",
       h1: "text-5xl leading-normal",
       h2: "text-4xl leading-normal",

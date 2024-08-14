@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { FollowCursor, OverlayNavbar } from "@/components";
+import { RootLayout as PortfolioLayout } from "./_root/layout";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -33,9 +34,9 @@ export default function RootLayout({
       <body
         className={`bg-gradient-to-b from-background to-black h-screen ${inter.className} ${inverse.variable} ${futura.variable}`}
       >
-        {/* <FollowCursor />
-        <OverlayNavbar /> */}
-        {children}
+        <PortfolioLayout />
+        <FollowCursor />
+        <OverlayNavbar />
       </body>
     </html>
   );
