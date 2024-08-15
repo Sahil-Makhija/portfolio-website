@@ -1,4 +1,3 @@
-export * from "./overlay-navbar";
-export * from "./typography";
-export * from "./follow-cursor";
 export * from "./layout";
+export * from "./ui";
+export * from "./shared";

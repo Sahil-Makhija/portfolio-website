@@ -9,7 +9,7 @@ interface CirclePatternProps {
 
 export const CirclePattern: React.FC<CirclePatternProps> = ({
   circles = 6,
-  gap = 40,
+  gap = 36,
 }) => {
   useEffect(() => {
     const handleCursorMove = (e: MouseEvent) => {
@@ -39,7 +39,7 @@ export const CirclePattern: React.FC<CirclePatternProps> = ({
           style={{
             width: `${(gap + index * 8) * 16}px`,
             height: `${(gap + index * 8) * 16}px`,
-            opacity: `${(5 * circles - index * 5) / 100}`,
+            opacity: `${(2 * circles - index) / 100}`,
           }}
         />
       ))}

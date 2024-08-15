@@ -1,4 +1,4 @@
-import { Typography } from "@/components/typography";
+import { Typography } from "../../typography";
 import { cn } from "@/lib/utils";
 import { useNavbarState } from "@/states";
 import Link from "next/link";

@@ -6,7 +6,6 @@ export interface TypographyProps
   extends HTMLAttributes<HTMLParagraphElement>,
     VariantProps<typeof typographyStyles> {
   gradientColor?: boolean;
-  component?: React.ElementType;
 }
 
 const gradientColorStyles = {
@@ -17,27 +16,28 @@ const gradientColorStyles = {
   WebkitTextFillColor: "transparent",
 };
 
-const typographyStyles = cva("text-white text-wrap", {
+export const typographyStyles = cva("text-white text-wrap", {
   variants: {
     fontFamily: {
       inter: "font-inter",
       inverse: "font-inverse",
       futura: "font-futura",
+      poppins: "font-poppins",
     },
     fontSize: {
-      D1: "md:text-[120px] text-7xl  leading-none tracking-wider ",
-      D2: "text-7xl leading-tight tracking-wide",
-      h1: "text-5xl leading-normal",
-      h2: "text-4xl leading-normal",
-      h3: "text-3xl leading-normal",
-      h4: "text-2xl leading-normal",
-      h5: "text-xl leading-normal",
-      h6: "text-lg leading-normal",
-      "body-l": "text-lg leading-relaxed",
-      "body-m": "text-base leading-normal",
-      "body-s": "text-sm leading-normal",
-      label: "text-13px leading-normal",
-      caption: "text-xs leading-normal",
+      D1: "text-5xl sm:text-6xl md:text-[120px] leading-none tracking-wider",
+      D2: "text-5xl sm:text-6xl md:text-7xl leading-tight tracking-wide",
+      h1: "text-3xl sm:text-4xl md:text-5xl leading-normal",
+      h2: "text-2xl sm:text-3xl md:text-4xl leading-normal",
+      h3: "text-xl sm:text-2xl md:text-3xl leading-normal",
+      h4: "text-lg sm:text-xl md:text-2xl leading-normal",
+      h5: "text-base sm:text-lg md:text-xl leading-normal",
+      h6: "text-sm sm:text-base md:text-lg leading-normal",
+      "body-l": "text-base sm:text-lg leading-relaxed",
+      "body-m": "text-sm sm:text-base leading-normal",
+      "body-s": "text-xs sm:text-sm leading-normal",
+      label: "text-xs sm:text-13px leading-normal",
+      caption: "text-xxs sm:text-xs leading-normal",
     },
     fontWeight: {
       regular: "font-normal",
@@ -62,11 +62,10 @@ export const Typography: React.FC<TypographyProps> = ({
   className,
   style = {},
   gradientColor = false,
-  component: BaseComponent = "span",
   ...restProps
 }) => {
   return (
-    <BaseComponent
+    <span
       className={cn(
         typographyStyles({ fontFamily, fontSize, fontWeight }),
         className
@@ -75,6 +74,6 @@ export const Typography: React.FC<TypographyProps> = ({
       {...restProps}
     >
       {children}
-    </BaseComponent>
+    </span>
   );
 };

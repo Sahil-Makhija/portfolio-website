@@ -3,12 +3,13 @@ import React, { ReactNode, useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 import { HTMLAttributes } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface TransitionContainerProps extends HTMLAttributes<HTMLDivElement> {
   id: string;
   children: ReactNode | Array<ReactNode>;
-  //   baseRoute: string;
+  baseRoute: string;
 }
 
 const PAGE_CHANGE_DURATION = 1000;
@@ -17,12 +18,16 @@ export const TransitionContainer: React.FC<TransitionContainerProps> = ({
   id,
   className,
   children,
+  baseRoute = "/",
   ...props
 }) => {
   const isScrolling = useRef(false);
   const [section, setSection] = useState(0);
 
   const pathname = usePathname();
+  const isAtBaseRoute = pathname === baseRoute;
+
+  const router = useRouter();
 
   const childrenArray = Array.isArray(children) ? children : [children];
 
@@ -58,13 +63,30 @@ export const TransitionContainer: React.FC<TransitionContainerProps> = ({
       {...props}
       id={id}
       style={{
-        backgroundColor: pathname === "/" ? "transparent" : "#030b17",
+        backgroundColor: isAtBaseRoute ? "transparent" : "#030b17",
       }}
       className={cn(
         className,
-        "h-screen transition-colors duration-150 ease-in overflow-hidden"
+        "relative h-screen overflow-hidden transition-colors duration-300 ease-in",
       )}
     >
+      {!isAtBaseRoute && (
+        <button
+          onClick={() => router.back()}
+          className="absolute left-10 top-28 z-10 overflow-hidden"
+        >
+          <Image
+            width={0}
+            height={0}
+            src="/icons/left-arrow.svg"
+            className={cn(
+              "w-14",
+              isAtBaseRoute ? "animate-slide-out" : "animate-slide-in",
+            )}
+            alt="_go_back"
+          />
+        </button>
+      )}
       <div
         style={{
           transition: "transform 0ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s",

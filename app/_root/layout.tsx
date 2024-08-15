@@ -8,7 +8,7 @@ import { TransitionContainer } from "@/components";
 export const RootLayout: React.FC = () => {
   return (
     <>
-      <TransitionContainer id="homepage">
+      <TransitionContainer baseRoute="/" id="homepage">
         <Home />
         <AboutUs />
         <Portfolio />
