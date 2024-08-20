@@ -1,11 +1,15 @@
-import { Typography } from "@/components";
+import { PageHeader, Typography } from "@/components";
 import Link from "next/link";
 
 export const Portfolio = () => {
   return (
-    <div className="h-screen py-20 flex justify-center items-center">
-      <div className="flex px-12 max-w-screen-2xl overflow-hidden w-full  h-max justify-between text-white">
-        <div className="flex flex-col gap-6 max-w-72">
+    <PageHeader
+      baseRoute="/"
+      pageRoute="/portfolio"
+      className="flex h-screen items-center justify-center py-20"
+    >
+      <div className="flex h-max w-full max-w-screen-2xl justify-between overflow-hidden px-12 text-white">
+        <div className="flex max-w-72 flex-col gap-6">
           <Typography
             fontFamily={"futura"}
             fontSize={"D1"}
@@ -15,12 +19,12 @@ export const Portfolio = () => {
             Works
           </Typography>
           <div className="relative h-6 w-36">
-            <div className="h-1 w-20 rounded-s-sm rounded-e-sm left-0 absolute top-0  bg-rose" />
-            <div className="h-1 w-20 rounded-s-sm rounded-e-sm right-0 absolute bottom-0  bg-rose" />
+            <div className="absolute left-0 top-0 h-1 w-20 rounded-e-sm rounded-s-sm bg-rose" />
+            <div className="absolute bottom-0 right-0 h-1 w-20 rounded-e-sm rounded-s-sm bg-rose" />
           </div>
           <Link href={"/contact"}>Show me more</Link>
         </div>
       </div>
-    </div>
+    </PageHeader>
   );
 };

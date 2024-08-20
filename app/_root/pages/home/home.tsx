@@ -1,30 +1,34 @@
-import { Typography } from "@/components";
+import { PageHeader, Typography } from "@/components";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
 export const Home = () => {
   const heroContainer = useRef<HTMLDivElement>(null);
-  // useGSAP(() => {
-  //   if (!heroContainer.current) return;
-  //   const children = gsap.utils.toArray(heroContainer.current.children);
-  //   children.map((child) => {
-  //     gsap.fromTo(
-  //       // @ts-ignore
-  //       child,
-  //       {
-  //         x: "-200%",
-  //       },
-  //       {
-  //         x: "0%",
-  //         duration: 0.75,
-  //         ease: "power1.inOut",
-  //         delay: children.indexOf(child) / 5,
-  //       }
-  //     );
-  //   });
-  // }, []);
+  useGSAP(() => {
+    if (!heroContainer.current) return;
+    const children = gsap.utils.toArray(heroContainer.current.children);
+    children.map((child) => {
+      gsap.fromTo(
+        // @ts-ignore
+        child,
+        {
+          x: "-200%",
+        },
+        {
+          x: "0%",
+          duration: 0.75,
+          ease: "power1.inOut",
+          delay: children.indexOf(child) / 5,
+        },
+      );
+    });
+  }, []);
   return (
-    <div className="flex h-screen items-center justify-center py-20">
+    <PageHeader
+      baseRoute="/"
+      pageRoute="/"
+      className="flex h-screen items-center justify-center py-20"
+    >
       <div className="flex h-max w-full max-w-screen-2xl justify-between overflow-hidden px-12 text-white">
         <div ref={heroContainer} className="flex max-w-72 flex-col gap-6">
           <Typography
@@ -48,6 +52,6 @@ export const Home = () => {
           </Typography>
         </div>
       </div>
-    </div>
+    </PageHeader>
   );
 };
