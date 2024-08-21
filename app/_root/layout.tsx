@@ -2,7 +2,7 @@
 import React from "react";
 
 import { CirclePattern } from "./components";
-import { AboutUs, Contact, Home, Portfolio } from "./pages";
+import { AboutMe, Contact, Home, Portfolio } from "./pages";
 import { TransitionContainer } from "@/components";
 
 export const RootLayout: React.FC = () => {
@@ -10,7 +10,7 @@ export const RootLayout: React.FC = () => {
     <>
       <TransitionContainer baseRoute="/" id="homepage">
         <Home />
-        <AboutUs />
+        <AboutMe />
         <Portfolio />
         <Contact />
       </TransitionContainer>

@@ -104,6 +104,18 @@ const config = {
             transform: "translateX(-110%)",
           },
         },
+        slideInView: {
+          from: { opacity: "0", transform: "translateX(-100%)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        slideInViewReverse: {
+          from: { opacity: "0", transform: "translateX(100%)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        slideOutView: {
+          from: { opacity: "0", transform: "translateX(0%)" },
+          to: { opacity: "1", transform: "translateX(130%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -111,6 +123,9 @@ const config = {
         rise: "rise 200ms ease-in 510ms 1",
         "slide-in": "slide-in 300ms ease-in 1",
         "slide-out": "slide-out 300ms ease-in 1",
+        slideRight: "slideInView 800ms ease-in",
+        slideRightOut: "slideOutView 500ms ease-in-out",
+        slideLeft: "slideInViewReverse 800ms ease-in",
       },
     },
   },

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import { FollowCursor, OverlayNavbar } from "@/components";
+import { OverlayNavbar } from "@/components";
 import { RootLayout as PortfolioLayout } from "./_root/layout";
 const inter = Inter({
   subsets: ["latin"],
@@ -38,10 +38,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`dark h-screen bg-gradient-to-b from-bg-primary to-black ${inter.className} ${inverse.variable} ${futura.variable} ${poppins.variable}`}
+        className={`h-screen bg-gradient-to-b from-bg-primary to-black ${inter.className} ${inverse.variable} ${futura.variable} ${poppins.variable}`}
       >
         <PortfolioLayout />
-        <FollowCursor />
+        {/* <FollowCursor /> */}
         <OverlayNavbar />
       </body>
     </html>

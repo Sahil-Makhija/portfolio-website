@@ -24,6 +24,8 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   }
 
   return (
-    <div className={cn(className, "h-screen overflow-hidden")}>{children}</div>
+    <section className={cn(className, "h-screen overflow-hidden")}>
+      {children}
+    </section>
   );
 };

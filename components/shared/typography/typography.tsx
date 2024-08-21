@@ -68,7 +68,7 @@ export const Typography: React.FC<TypographyProps> = ({
     <span
       className={cn(
         typographyStyles({ fontFamily, fontSize, fontWeight }),
-        className
+        className,
       )}
       style={gradientColor ? { ...style, ...gradientColorStyles } : style}
       {...restProps}

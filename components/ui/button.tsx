@@ -32,7 +32,7 @@ const buttonVariants = cva(
             fontSize: "body-l",
             fontWeight: "medium",
           }),
-          "h-11 rounded-md py-[18px] px-8"
+          "rounded-md py-3 px-8",
         ),
         icon: "h-10 w-10",
       },
@@ -45,7 +45,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
@@ -64,7 +64,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       fontFamily = "futura",
       ...props
     },
-    ref
+    ref,
   ) => {
     const Comp = asChild ? Slot : "button";
     return (
@@ -74,7 +74,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       />
     );
-  }
+  },
 );
 Button.displayName = "Button";
 
