@@ -1,6 +1,6 @@
 "use client";
 import gsap from "gsap";
-import { ReactNode, useEffect } from "react";
+import { useEffect } from "react";
 
 interface CirclePatternProps {
   circles?: number;
@@ -30,7 +30,7 @@ export const CirclePattern: React.FC<CirclePatternProps> = ({
         width: `${(gap + (circles - 1) * 8) * 16}px`,
         zIndex: "-1",
       }}
-      className="fixed top-0 right-0  h-screen overflow-visible  flex items-center justify-center "
+      className="fixed right-0 top-0 flex h-screen items-center justify-center overflow-visible"
     >
       {[...Array(circles)].map((_, index) => (
         <div

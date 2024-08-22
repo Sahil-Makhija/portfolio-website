@@ -10,6 +10,7 @@ import Link from "next/link";
 import React from "react";
 import { DetailsSection } from "./details-section";
 import { SkillsSection } from "./skills-section";
+import { PassionSection } from "./passion-section";
 
 export const AboutMe = () => {
   return (
@@ -67,6 +68,7 @@ export const AboutMe = () => {
       </PageHeader>
       <PageBody pageRoute="/about">
         <DetailsSection />
+        {/* <PassionSection /> */}
         <SkillsSection />
       </PageBody>
     </>

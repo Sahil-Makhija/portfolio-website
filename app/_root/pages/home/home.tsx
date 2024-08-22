@@ -29,7 +29,7 @@ export const Home = () => {
       pageRoute="/"
       className="flex h-screen items-center justify-center py-20"
     >
-      <div className="flex h-max w-full max-w-screen-2xl justify-between overflow-hidden px-12 text-white">
+      <div className="overflow-hiddentext-white flex h-max w-4/5 max-w-screen-2xl justify-between">
         <div ref={heroContainer} className="flex max-w-72 flex-col gap-6">
           <Typography
             fontFamily={"futura"}

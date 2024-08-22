@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { HTMLAttributes } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
+import { PageIndicator } from "./page-indicator";
 
 interface TransitionContainerProps extends HTMLAttributes<HTMLDivElement> {
   id: string;
@@ -24,7 +25,7 @@ export const TransitionContainer: React.FC<TransitionContainerProps> = ({
   id,
   className,
   children,
-  baseRoute = "/",
+  baseRoute,
   ...props
 }) => {
   const isScrolling = useRef(false);
@@ -108,6 +109,11 @@ export const TransitionContainer: React.FC<TransitionContainerProps> = ({
           />
         </button>
       )}
+      <PageIndicator
+        activePageIndex={section}
+        totalPages={PAGE_SECTIONS}
+        className="absolute -bottom-10 left-[50vw] -rotate-90 max-lg:-translate-x-[100%] lg:left-10 lg:top-[50vh] lg:-translate-y-[50%] lg:rotate-0"
+      />
       <div style={containerStyle} className="h-max">
         {childrenArray}
       </div>

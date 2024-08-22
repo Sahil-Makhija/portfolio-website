@@ -6,7 +6,10 @@ export const OverlayNavbar = () => {
   return (
     <>
       <NavbarOverlay />
-      <header className="h-20 flex fixed top-0 left-0 w-screen justify-between items-center z-10 px-8 py-12">
+      <header className="fixed left-0 top-0 z-10 flex h-20 w-screen items-center justify-between px-8 py-12">
+        <Typography fontFamily={"inverse"} fontSize={"h2"}>
+          SM
+        </Typography>
         <MenuIcon />
       </header>
     </>
