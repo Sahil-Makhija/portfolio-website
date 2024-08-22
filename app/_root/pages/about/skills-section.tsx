@@ -5,7 +5,9 @@ import { SkillSet } from "@/constants";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 
 export const SkillsSection: React.FC = () => {
-  const scrolled = useScrollTop(window.innerHeight * 1.6);
+  const isBrowser = typeof window !== "undefined";
+  const scrolled = useScrollTop(isBrowser ? window.innerHeight * 1.6 : 0);
+
   return (
     <div className="relative flex h-max w-screen justify-center overflow-hidden bg-white py-40">
       <div className="absolute left-0 top-40 flex w-max -translate-y-2 items-center gap-4">
