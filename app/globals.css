@@ -76,3 +76,7 @@ html {
     @apply bg-bg-primary text-foreground;
   }
 }
+
+.lucide:hover {
+  @apply text-white/80;
+}

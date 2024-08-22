@@ -29,6 +29,7 @@ export const TransitionContainer: React.FC<TransitionContainerProps> = ({
   ...props
 }) => {
   const isScrolling = useRef(false);
+  const touchStartY = useRef(0);
 
   const pathname = usePathname();
   const atBaseRoute = pathname === baseRoute;
@@ -73,9 +74,40 @@ export const TransitionContainer: React.FC<TransitionContainerProps> = ({
         }, PAGE_CHANGE_DURATION);
       }
     };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY.current = e.touches[0].clientY; // Store the initial touch position
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (isScrolling.current) return;
+
+      const touchEndY = e.touches[0].clientY; // Get the current touch position
+      const deltaY = touchStartY.current - touchEndY; // Calculate the distance moved
+
+      if (Math.abs(deltaY) <= 10) return; // To handle minor swipes (similar to your scroll handling)
+
+      isScrolling.current = true;
+      let scrollingDown = deltaY > 0;
+
+      if (scrollingDown) {
+        setSection((prev) => Math.min(PAGE_SECTIONS - 1, prev + 1));
+      } else {
+        setSection((prev) => Math.max(0, prev - 1));
+      }
+
+      setTimeout(() => {
+        isScrolling.current = false;
+      }, PAGE_CHANGE_DURATION);
+    };
+
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchmove", handleTouchMove);
     window.addEventListener("wheel", handleScroll);
     return () => {
       window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
     };
   }, [PAGE_SECTIONS, atBaseRoute]);
 
