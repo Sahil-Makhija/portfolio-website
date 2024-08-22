@@ -64,6 +64,6 @@ export const SkillSet: Array<SkillItemProps> = [
     title: "TailwindCSS",
     iconURL: "/icons/tailwind.svg",
     experience: "1.5 years",
-    level: 80,
+    level: 90,
   },
 ];

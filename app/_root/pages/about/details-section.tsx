@@ -2,8 +2,8 @@ import { Separator, Typography } from "@/components";
 
 export const DetailsSection: React.FC = () => {
   return (
-    <div className="relative flex h-max w-screen justify-center overflow-hidden bg-white py-40">
-      <div className="absolute left-0 top-40 flex w-max items-center gap-4">
+    <div className="relative flex h-max w-screen justify-center overflow-hidden bg-white pt-40">
+      <div className="absolute left-0 top-40 flex w-max -translate-y-2 items-center gap-4">
         <Separator className="h-0.5 w-12 bg-black" />
         <Typography
           fontFamily={"inverse"}

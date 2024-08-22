@@ -17,7 +17,7 @@ export const Portfolio = () => {
       >
         <TransitionDiv
           matchingRoute="/portfolio"
-          className="flex h-max w-full max-w-screen-2xl items-end justify-between overflow-hidden px-12 text-white"
+          className="flex h-max w-full max-w-screen-2xl items-end justify-between overflow-hidden px-12 text-white md:w-4/5"
           routeMatchClassName="-translate-y-64"
         >
           <div className="flex flex-col gap-6">

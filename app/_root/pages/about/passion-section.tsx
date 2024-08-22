@@ -1,9 +1,11 @@
 import { Separator, Typography } from "@/components";
+import { passion } from "@/constants";
+import Image from "next/image";
 
 export const PassionSection: React.FC = () => {
   return (
-    <div className="relative flex min-h-screen w-screen justify-center overflow-hidden bg-white py-40">
-      <div className="absolute left-0 top-40 flex w-max items-center gap-4">
+    <div className="relative flex w-screen justify-center overflow-hidden bg-white pt-40">
+      <div className="absolute left-0 top-40 flex w-max -translate-y-2 items-center gap-4">
         <Separator className="h-0.5 w-12 bg-black" />
         <Typography
           fontFamily={"inverse"}
@@ -22,7 +24,37 @@ export const PassionSection: React.FC = () => {
         >
           PASSION
         </Typography>
-        <div className="grid h-max w-full grid-cols-3 border"></div>
+        <div className="flex w-full grid-cols-3 place-content-evenly gap-16">
+          {passion.map((item) => (
+            <div
+              className="flex max-w-80 flex-col items-center gap-6"
+              key={`passion-item-${item.title}`}
+            >
+              <Image
+                src={item.imageURL}
+                alt={item.title}
+                className="aspect-square max-w-40"
+                width={160}
+                height={160}
+              />
+              <Typography
+                fontFamily={"futura"}
+                fontSize={"h3"}
+                fontWeight={"semibold"}
+                className="uppercase tracking-widest text-foreground"
+              >
+                {item.title}
+              </Typography>
+              <Typography
+                fontSize={"body-l"}
+                fontFamily={"inter"}
+                className="text-justify text-muted-foreground"
+              >
+                {item.description}
+              </Typography>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

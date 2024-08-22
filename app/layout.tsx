@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { OverlayNavbar } from "@/components";
 import { RootLayout as PortfolioLayout } from "./_root/layout";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
