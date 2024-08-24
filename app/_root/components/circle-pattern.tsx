@@ -1,16 +1,19 @@
 "use client";
 import gsap from "gsap";
 import { useEffect } from "react";
+import { useIsMounted, useMediaQuery } from "usehooks-ts";
 
 interface CirclePatternProps {
   circles?: number;
-  gap?: number;
 }
 
 export const CirclePattern: React.FC<CirclePatternProps> = ({
   circles = 6,
-  gap = 36,
 }) => {
+  const lgView = useMediaQuery("(min-width:800px)");
+  const widthRate = lgView ? 16 : 10;
+  const isMounted = useIsMounted();
+  const GAP = 36;
   useEffect(() => {
     const handleCursorMove = (e: MouseEvent) => {
       gsap.to("#circle_container", {
@@ -23,22 +26,25 @@ export const CirclePattern: React.FC<CirclePatternProps> = ({
     window.addEventListener("mousemove", handleCursorMove);
     return () => window.removeEventListener("mousemove", handleCursorMove);
   }, []);
+  if (!isMounted) {
+    return null;
+  }
   return (
     <div
       id="circle_container"
       style={{
-        width: `${(gap + (circles - 1) * 8) * 16}px`,
+        width: `${(GAP + (circles - 1) * 8) * 16}px`,
         zIndex: "-1",
       }}
-      className="fixed right-0 top-0 flex h-screen items-center justify-center overflow-visible"
+      className="fixed left-0 top-0 flex h-screen max-w-full items-center justify-center overflow-visible sm:left-1/4 md:left-[40vw]"
     >
       {[...Array(circles)].map((_, index) => (
         <div
           key={index}
           className={`absolute rounded-full bg-white`}
           style={{
-            width: `${(gap + index * 8) * 16}px`,
-            height: `${(gap + index * 8) * 16}px`,
+            width: `${(GAP + index * 8) * widthRate}px`,
+            height: `${(GAP + index * 8) * widthRate}px`,
             opacity: `${(2 * circles - index) / 100}`,
           }}
         />

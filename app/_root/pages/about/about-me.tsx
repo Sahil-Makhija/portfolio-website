@@ -18,7 +18,7 @@ export const AboutMe = () => {
       <PageHeader
         baseRoute="/"
         pageRoute="/about"
-        className="relative flex h-screen items-center py-20"
+        className="relative flex h-screen items-end py-20 sm:items-center"
       >
         <div className="z-10 mx-auto flex w-full max-w-screen-2xl flex-col gap-6 max-lg:px-12 md:w-4/5">
           <Typography
@@ -53,10 +53,9 @@ export const AboutMe = () => {
           </Button>
         </div>
         <TransitionDiv
-          style={{ height: "80vh", width: "55vw", left: "40vw" }}
-          routeMatchStyle={{ height: "100vh", width: "60vw" }}
           matchingRoute="/about"
-          className="absolute overflow-hidden"
+          className="absolute left-[10%] h-1/2 w-4/5 overflow-hidden max-sm:top-20 sm:left-[40vw] sm:h-4/5 sm:w-[55vw]"
+          routeMatchClassName="sm:h-screen left-0 w-screen sm:w-3/5"
         >
           <Image
             src={"/images/about.jpg"}
