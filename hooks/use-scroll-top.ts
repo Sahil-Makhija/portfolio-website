@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-export const useScrollTop = (threshold = 10) => {
+export const useScrollTop = (
+  threshold = typeof window !== "undefined" ? window.innerHeight : 10,
+) => {
   const [scrolled, setScrolled] = useState<boolean>(false);
 
   useEffect(() => {

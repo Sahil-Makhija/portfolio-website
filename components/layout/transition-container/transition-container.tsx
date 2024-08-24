@@ -2,6 +2,7 @@
 import React, {
   CSSProperties,
   ReactNode,
+  useCallback,
   useEffect,
   useRef,
   useState,
@@ -53,25 +54,28 @@ export const TransitionContainer: React.FC<TransitionContainerProps> = ({
   const childrenArray = Array.isArray(children) ? children : [children];
   const PAGE_SECTIONS = childrenArray.length;
 
+  const scrollPage = useCallback((deltaY: number) => {
+    if (Math.abs(deltaY) <= 10) return; // To handle minor swipes (similar to your scroll handling)
+
+    isScrolling.current = true;
+    let scrollingDown = deltaY > 0;
+
+    if (scrollingDown) {
+      setSection((prev) => Math.min(PAGE_SECTIONS - 1, prev + 1));
+    } else {
+      setSection((prev) => Math.max(0, prev - 1));
+    }
+    setTimeout(() => {
+      isScrolling.current = false;
+    }, PAGE_CHANGE_DURATION);
+  }, []);
+
   useEffect(() => {
     if (!atBaseRoute) return;
     const handleScroll = (e: WheelEvent) => {
       if (isScrolling.current) return;
       else {
-        if (e.deltaY <= 10 && e.deltaY >= -10) return; //To handle minor scrolling
-        isScrolling.current = true;
-        let scrollingDown = false;
-        if (e.deltaY > 0) {
-          scrollingDown = true;
-        }
-        if (scrollingDown) {
-          setSection((prev) => Math.min(PAGE_SECTIONS - 1, prev + 1));
-        } else {
-          setSection((prev) => Math.max(0, prev - 1));
-        }
-        setTimeout(() => {
-          isScrolling.current = false;
-        }, PAGE_CHANGE_DURATION);
+        scrollPage(e.deltaY);
       }
     };
 
@@ -81,24 +85,9 @@ export const TransitionContainer: React.FC<TransitionContainerProps> = ({
 
     const handleTouchMove = (e: TouchEvent) => {
       if (isScrolling.current) return;
-
       const touchEndY = e.touches[0].clientY; // Get the current touch position
       const deltaY = touchStartY.current - touchEndY; // Calculate the distance moved
-
-      if (Math.abs(deltaY) <= 10) return; // To handle minor swipes (similar to your scroll handling)
-
-      isScrolling.current = true;
-      let scrollingDown = deltaY > 0;
-
-      if (scrollingDown) {
-        setSection((prev) => Math.min(PAGE_SECTIONS - 1, prev + 1));
-      } else {
-        setSection((prev) => Math.max(0, prev - 1));
-      }
-
-      setTimeout(() => {
-        isScrolling.current = false;
-      }, PAGE_CHANGE_DURATION);
+      scrollPage(deltaY);
     };
 
     window.addEventListener("touchstart", handleTouchStart);
@@ -109,7 +98,7 @@ export const TransitionContainer: React.FC<TransitionContainerProps> = ({
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchmove", handleTouchMove);
     };
-  }, [PAGE_SECTIONS, atBaseRoute]);
+  }, [PAGE_SECTIONS, atBaseRoute, scrollPage]);
 
   return (
     <section
@@ -147,7 +136,7 @@ export const TransitionContainer: React.FC<TransitionContainerProps> = ({
         className="absolute -bottom-10 left-[50vw] -rotate-90 max-lg:-translate-x-[100%] lg:left-10 lg:top-[50vh] lg:-translate-y-[50%] lg:rotate-0"
       />
       <div style={containerStyle} className="h-max">
-        {childrenArray}
+        {children}
       </div>
     </section>
   );

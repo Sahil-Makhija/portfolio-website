@@ -55,7 +55,7 @@ export const AboutMe = () => {
         <TransitionDiv
           matchingRoute="/about"
           className="absolute left-[10%] h-1/2 w-4/5 overflow-hidden max-sm:top-20 sm:left-[40vw] sm:h-4/5 sm:w-[55vw]"
-          routeMatchClassName="sm:h-screen left-0 w-screen sm:w-3/5"
+          routeMatchClassName="sm:h-screen left-0 w-screen sm:w-3/5 max-sm:top-0"
         >
           <Image
             src={"/images/about.jpg"}
