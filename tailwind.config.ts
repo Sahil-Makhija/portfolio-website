@@ -23,6 +23,7 @@ const config = {
           primary: "#072142",
         },
         rose: "var(--rose)",
+        navy: "var(--navy)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -1,7 +1,7 @@
 export const gradientStyles = {
   1: "linear-gradient(90deg, rgb(76, 165, 255) 0%, rgb(181, 115, 248) 100%)",
   2: "linear-gradient(90deg, #7351BE 0%, #EF6547 44.09%, #3A8FF2 100%)",
-  3: "linear-gradient(to right, #072142 0%, #8c2b7a 2%, #ff4d5a 100%)",
+  3: "linear-gradient(to right, #072142, #8c2b7a 42%, #ff4d5a)",
   4: "linear-gradient(135deg, #e0f7fa 0%, #80deea 100%)",
   5: "linear-gradient(135deg, #ffe0b2 0%, #ffccbc 100%)",
   6: "linear-gradient(135deg, #e1bee7 0%, #ce93d8 100%)",

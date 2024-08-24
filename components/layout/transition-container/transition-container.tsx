@@ -13,6 +13,8 @@ import { HTMLAttributes } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { PageIndicator } from "./page-indicator";
+import { useScrollTop } from "@/hooks/use-scroll-top";
+import { LeftArrow } from "@/assets";
 
 interface TransitionContainerProps extends HTMLAttributes<HTMLDivElement> {
   id: string;
@@ -34,6 +36,8 @@ export const TransitionContainer: React.FC<TransitionContainerProps> = ({
 
   const pathname = usePathname();
   const atBaseRoute = pathname === baseRoute;
+
+  const scrolled = useScrollTop();
 
   const [section, setSection] = useState(0);
   const containerStyle: CSSProperties = atBaseRoute
@@ -105,7 +109,7 @@ export const TransitionContainer: React.FC<TransitionContainerProps> = ({
       {...props}
       id={id}
       style={{
-        backgroundColor: atBaseRoute ? "transparent" : "transparent",
+        backgroundColor: atBaseRoute ? "transparent" : "var(--navy)",
         height: atBaseRoute ? "100vh" : "max-content",
       }}
       className={cn(
@@ -114,21 +118,16 @@ export const TransitionContainer: React.FC<TransitionContainerProps> = ({
       )}
     >
       {!atBaseRoute && (
-        <button
-          onClick={() => router.back()}
-          className="fixed left-10 top-28 z-10 overflow-hidden"
-        >
-          <Image
-            width={0}
-            height={0}
-            src="/icons/left-arrow.svg"
+        <>
+          <LeftArrow
+            onClick={() => router.back()}
             className={cn(
-              "w-14",
+              "fixed left-10 top-28 z-10 w-14 overflow-hidden",
               atBaseRoute ? "animate-slide-out" : "animate-slide-in",
             )}
-            alt="_go_back"
+            color={scrolled ? "black" : "white"}
           />
-        </button>
+        </>
       )}
       <PageIndicator
         activePageIndex={section}

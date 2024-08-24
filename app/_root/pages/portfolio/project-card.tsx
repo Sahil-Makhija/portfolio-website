@@ -39,48 +39,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         className,
         "flex justify-end",
       )}
-    >
-      <Image
-        src={coverImageURL}
-        alt={title}
-        fill
-        className="z-0 max-h-96 max-w-[55%] object-cover grayscale transition-all duration-150 ease-in-out hover:grayscale-0"
-      />
-      <div className="z-10 flex w-1/2 flex-col gap-6">
-        <div className="flex flex-col gap-3">
-          <Typography
-            className="text-rose"
-            fontFamily={"inter"}
-            fontSize={"label"}
-            fontWeight={"regular"}
-          >
-            {label}
-          </Typography>
-          <Typography
-            fontFamily={"poppins"}
-            fontSize={"h3"}
-            fontWeight={"semibold"}
-            className="tracking-wider"
-          >
-            {title}
-          </Typography>
-        </div>
-        <div className="h-max w-full rounded-md bg-primary p-4 text-white shadow-sm shadow-black hover:shadow-lg">
-          {description}
-        </div>
-        <div className="flex items-center gap-3">
-          {!!githubURL && (
-            <Link href={githubURL}>
-              <Github />
-            </Link>
-          )}
-          {liveURL && (
-            <Link href={liveURL}>
-              <ExternalLink />
-            </Link>
-          )}
-        </div>
-      </div>
-    </div>
+    ></div>
   );
 };

@@ -48,7 +48,21 @@ export const Portfolio = () => {
           </div>
         </TransitionDiv>
       </PageHeader>
-      <PageBody pageRoute="/portfolio"></PageBody>
+      <PageBody
+        className="absolute left-1/4 top-80 mx-auto w-1/2 rounded-xl bg-white"
+        pageRoute="/portfolio"
+      >
+        <div className="grid w-full max-w-screen-xl grid-cols-1 rounded-xl">
+          <ProjectCard
+            coverImageURL="/images/about.jpg"
+            title="Sahil Makhija | Portfolio"
+            description="Supreme Portfolio developed by Myself"
+            orientation="left"
+            githubURL="/"
+            liveURL="/"
+          />
+        </div>
+      </PageBody>
     </>
   );
 };
