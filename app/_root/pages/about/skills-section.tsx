@@ -20,16 +20,16 @@ export const SkillsSection: React.FC = () => {
           03
         </Typography>
       </div>
-      <div className="flex h-full w-full max-w-screen-xl flex-col justify-between gap-32">
+      <div className="flex h-full w-full max-w-screen-xl flex-col justify-between gap-32 lg:w-4/5">
         <Typography
           fontSize={"h2"}
           fontFamily={"futura"}
           fontWeight={"medium"}
-          className="tracking-widest text-foreground"
+          className="tracking-widest text-foreground max-lg:text-center"
         >
           SKILL SET
         </Typography>
-        <div className="grid h-max w-full grid-cols-2 gap-16">
+        <div className="mx-auto grid h-max w-4/5 grid-cols-1 gap-16 lg:w-full lg:grid-cols-2">
           {SkillSet.map((skill, idx) => (
             <SkillItem
               experience={skill.experience}

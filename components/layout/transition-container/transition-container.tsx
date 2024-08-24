@@ -116,7 +116,7 @@ export const TransitionContainer: React.FC<TransitionContainerProps> = ({
       {...props}
       id={id}
       style={{
-        backgroundColor: atBaseRoute ? "transparent" : "#030b17",
+        backgroundColor: atBaseRoute ? "transparent" : "transparent",
         height: atBaseRoute ? "100vh" : "max-content",
       }}
       className={cn(

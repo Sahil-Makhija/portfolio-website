@@ -1,4 +1,4 @@
-import { PageHeader, Typography } from "@/components";
+import { Button, PageHeader, Typography } from "@/components";
 import { useRef } from "react";
 
 import { Github, Linkedin } from "lucide-react";
@@ -63,6 +63,15 @@ export const Contact = () => {
               <Github className="size-8" />
             </Link>
           </div>
+          {/* <Button
+            className="w-max"
+            radius={"rounded"}
+            variant={"primary"}
+            size={"default"}
+            asChild
+          >
+            <Link href={"/contact"}>Say Hello!</Link>
+          </Button> */}
         </div>
       </div>
     </PageHeader>

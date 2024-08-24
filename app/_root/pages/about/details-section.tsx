@@ -13,16 +13,16 @@ export const DetailsSection: React.FC = () => {
           01
         </Typography>
       </div>
-      <div className="flex h-full w-full max-w-screen-xl justify-between">
+      <div className="flex h-full w-4/5 max-w-screen-xl flex-col justify-between gap-y-20 lg:flex-row">
         <Typography
           fontSize={"h2"}
           fontFamily={"futura"}
           fontWeight={"medium"}
-          className="tracking-widest text-foreground"
+          className="text-center tracking-widest text-foreground"
         >
           WHO I AM
         </Typography>
-        <div className="flex h-max w-1/2 flex-col gap-8">
+        <div className="flex h-max w-full flex-col gap-8 lg:w-1/2">
           <div className="flex flex-col gap-4">
             <Typography
               className="tracking-widest text-foreground"

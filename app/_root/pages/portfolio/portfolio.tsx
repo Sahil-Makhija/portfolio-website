@@ -6,6 +6,8 @@ import {
   Typography,
 } from "@/components";
 import Link from "next/link";
+import { ProjectCard } from "./project-card";
+import { socialLinks } from "@/constants";
 
 export const Portfolio = () => {
   return (
@@ -18,7 +20,7 @@ export const Portfolio = () => {
         <TransitionDiv
           matchingRoute="/portfolio"
           className="flex h-max w-full max-w-screen-2xl items-end justify-between overflow-hidden px-12 text-white md:w-4/5"
-          routeMatchClassName="-translate-y-64"
+          routeMatchClassName="-translate-y-72"
         >
           <div className="flex flex-col gap-6">
             <Typography
@@ -46,6 +48,7 @@ export const Portfolio = () => {
           </div>
         </TransitionDiv>
       </PageHeader>
+      <PageBody pageRoute="/portfolio"></PageBody>
     </>
   );
 };

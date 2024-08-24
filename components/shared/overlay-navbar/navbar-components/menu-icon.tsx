@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/lib/utils";
 import { useNavbarState } from "@/states";
 import React from "react";
@@ -13,18 +14,18 @@ export const MenuIcon: React.FC = () => {
       onClick={() => {
         toggleNavbar();
       }}
-      className="w-12 h-5 relative"
+      className="relative h-5 w-12"
     >
       <div
         className={cn(
-          "w-full h-0.5 bg-white absolute top-0 left-0 transition-transform duration-150 ease-in",
-          isOpen && "rotate-45 translate-y-2"
+          "absolute left-0 top-0 h-0.5 w-full bg-white transition-transform duration-150 ease-in",
+          isOpen && "translate-y-2 rotate-45",
         )}
       />
       <div
         className={cn(
-          "w-full h-0.5 bg-white absolute bottom-0 left-0 transition-transform duration-150 ease-in",
-          isOpen && "-rotate-45 -translate-y-2.5"
+          "absolute bottom-0 left-0 h-0.5 w-full bg-white transition-transform duration-150 ease-in",
+          isOpen && "-translate-y-2.5 -rotate-45",
         )}
       />
     </div>

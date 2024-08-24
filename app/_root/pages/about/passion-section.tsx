@@ -15,16 +15,16 @@ export const PassionSection: React.FC = () => {
           02
         </Typography>
       </div>
-      <div className="flex h-full w-full max-w-screen-xl flex-col justify-between gap-32">
+      <div className="flex h-full w-full max-w-screen-xl flex-col justify-between gap-32 lg:w-4/5">
         <Typography
           fontSize={"h2"}
           fontFamily={"futura"}
           fontWeight={"medium"}
-          className="tracking-widest text-foreground"
+          className="tracking-widest text-foreground max-lg:text-center"
         >
           PASSION
         </Typography>
-        <div className="flex w-full grid-cols-3 place-content-evenly gap-16">
+        <div className="grid w-full grid-cols-1 place-content-evenly gap-16 max-lg:place-items-center lg:grid-cols-3">
           {passion.map((item) => (
             <div
               className="flex max-w-80 flex-col items-center gap-6"

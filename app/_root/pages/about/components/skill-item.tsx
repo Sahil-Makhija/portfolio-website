@@ -19,7 +19,7 @@ export const SkillItem: React.FC<SkillItemProps> = ({
     <div className="flex h-max gap-4 overflow-hidden">
       <Image
         src={iconURL}
-        className="object-cover"
+        className="max-w-10 object-contain md:max-w-14 lg:max-w-max"
         alt={`_${title}`}
         width={60}
         height={60}

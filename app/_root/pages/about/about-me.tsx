@@ -20,7 +20,7 @@ export const AboutMe = () => {
         pageRoute="/about"
         className="relative flex h-screen items-center py-20"
       >
-        <div className="z-10 mx-auto flex w-full max-w-screen-2xl flex-col gap-6 md:w-4/5">
+        <div className="z-10 mx-auto flex w-full max-w-screen-2xl flex-col gap-6 max-lg:px-12 md:w-4/5">
           <Typography
             fontFamily={"futura"}
             fontSize={"D1"}
