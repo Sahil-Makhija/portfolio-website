@@ -3,7 +3,7 @@ import React from "react";
 
 import { CirclePattern } from "./components";
 import { AboutMe, Contact, Home, Portfolio } from "./pages";
-import { PageBody, TransitionContainer } from "@/components";
+import { TransitionContainer } from "@/components";
 
 export const RootLayout: React.FC = () => {
   return (
@@ -14,9 +14,7 @@ export const RootLayout: React.FC = () => {
         <Portfolio />
         <Contact />
       </TransitionContainer>
-      <PageBody pageRoute="/">
-        <CirclePattern circles={6} />
-      </PageBody>
+      <CirclePattern rootRoute="/" circles={6} />
     </>
   );
 };

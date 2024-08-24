@@ -1,20 +1,28 @@
 "use client";
 import gsap from "gsap";
-import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { useIsMounted, useMediaQuery } from "usehooks-ts";
 
 interface CirclePatternProps {
   circles?: number;
+  rootRoute?: string;
 }
 
 export const CirclePattern: React.FC<CirclePatternProps> = ({
   circles = 6,
+  rootRoute,
 }) => {
+  const pathname = usePathname();
   const lgView = useMediaQuery("(min-width:800px)");
   const widthRate = lgView ? 16 : 10;
-  const isMounted = useIsMounted();
   const GAP = 36;
+  const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+  useEffect(() => {
+    if (pathname !== rootRoute) return;
     const handleCursorMove = (e: MouseEvent) => {
       gsap.to("#circle_container", {
         x: (window.innerWidth - e.clientX) / 20,
