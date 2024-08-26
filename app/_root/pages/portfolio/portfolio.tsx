@@ -1,5 +1,6 @@
 import {
   Button,
+  CarouselCreator,
   PageBody,
   PageHeader,
   TransitionDiv,
@@ -48,21 +49,19 @@ export const Portfolio = () => {
           </div>
         </TransitionDiv>
       </PageHeader>
-      <PageBody
-        className="absolute left-1/4 top-80 mx-auto w-1/2 rounded-xl bg-white"
-        pageRoute="/portfolio"
-      >
-        <div className="grid w-full max-w-screen-xl grid-cols-1 rounded-xl">
-          <ProjectCard
-            coverImageURL="/images/about.jpg"
-            title="Sahil Makhija | Portfolio"
-            description="Supreme Portfolio developed by Myself"
-            orientation="left"
-            githubURL="/"
-            liveURL="/"
-          />
-        </div>
+      <PageBody className="flex justify-center" pageRoute="/portfolio">
+        <div
+          style={{ height: "70vh" }}
+          className="animate-fade-in absolute bottom-4 mx-auto min-h-96 w-full max-w-screen-xl overflow-y-auto overflow-x-hidden rounded-3xl bg-white"
+        ></div>
       </PageBody>
     </>
   );
 };
+{
+  /* <ProjectCard
+  coverImageURL="/images/about.jpg"
+  description="My Portfolio Website"
+  title="Sahil Makhija | Portfolio"
+/> */
+}

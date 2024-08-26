@@ -2,7 +2,7 @@
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useIsMounted, useMediaQuery } from "usehooks-ts";
+import { useMediaQuery } from "usehooks-ts";
 
 interface CirclePatternProps {
   circles?: number;

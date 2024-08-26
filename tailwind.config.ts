@@ -22,6 +22,7 @@ const config = {
         bg: {
           primary: "#072142",
         },
+        main: "var(--main)",
         rose: "var(--rose)",
         navy: "var(--navy)",
         border: "hsl(var(--border))",
@@ -105,6 +106,16 @@ const config = {
             transform: "translateX(-110%)",
           },
         },
+        "fade-in": {
+          from: {
+            opacity: "0",
+            transform: "translateY(100%)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0%)",
+          },
+        },
         slideInView: {
           from: { opacity: "0", transform: "translateX(-100%)" },
           to: { opacity: "1", transform: "translateX(0)" },
@@ -127,6 +138,7 @@ const config = {
         slideRight: "slideInView 800ms ease-in",
         slideRightOut: "slideOutView 500ms ease-in-out",
         slideLeft: "slideInViewReverse 800ms ease-in",
+        "fade-in": "fade-in 500ms ease-in 1",
       },
     },
   },

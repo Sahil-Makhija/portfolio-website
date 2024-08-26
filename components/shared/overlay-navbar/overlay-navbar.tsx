@@ -3,6 +3,8 @@ import { cn } from "@/lib/utils";
 import { Typography } from "../typography";
 import { MenuIcon, NavbarOverlay } from "./navbar-components";
 import { useScrollTop } from "@/hooks/use-scroll-top";
+import { Button } from "@/components/ui";
+import Link from "next/link";
 
 export const OverlayNavbar = () => {
   const scrolled = useScrollTop();
@@ -18,7 +20,20 @@ export const OverlayNavbar = () => {
         >
           SM
         </Typography>
-        <MenuIcon />
+        <div className="flex items-center gap-12">
+          <Button asChild variant={"outline"}>
+            <Link target="_blank" href={"/resume.pdf"}>
+              <Typography
+                className="text-primary"
+                fontFamily={"inter"}
+                fontSize={"body-s"}
+              >
+                Resume
+              </Typography>
+            </Link>
+          </Button>
+          <MenuIcon />
+        </div>
       </header>
     </>
   );
