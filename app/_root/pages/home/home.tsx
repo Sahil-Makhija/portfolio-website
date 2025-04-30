@@ -48,7 +48,7 @@ export const Home = () => {
             fontSize={"h3"}
             fontWeight={"medium"}
           >
-            web designer / Software Developer.
+            Software Engineer / Cybersecurity Specialist
           </Typography>
         </div>
       </div>
