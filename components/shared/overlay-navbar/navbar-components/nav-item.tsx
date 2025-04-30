@@ -1,8 +1,11 @@
+"use client";
+
 import { Typography } from "../../typography";
 import { cn } from "@/lib/utils";
 import { useNavbarState } from "@/states";
-import Link from "next/link";
 import { FC, ReactNode } from "react";
+
+import { useRouter } from "next/navigation";
 
 interface NavItemProps {
   children: ReactNode;
@@ -11,19 +14,24 @@ interface NavItemProps {
 
 export const NavItem: FC<NavItemProps> = ({ children, href = "/" }) => {
   const { isOpen, setIsOpen } = useNavbarState((state) => state);
+  const router = useRouter();
 
   return (
-    <Link
-      href={href}
-      onClick={() => setIsOpen(false)}
-      className="w-max peer  hover:z-20 h-max overflow-hidden relative flex items-center justify-center group text-white px-1"
+    <li
+      onClick={() => {
+        setIsOpen(false);
+        // setTimeout(() => {
+        //   router.push(href);
+        // }, 500);
+      }}
+      className="group peer relative flex h-max w-max cursor-pointer items-center justify-center overflow-hidden px-1 text-white hover:z-20"
     >
       <div
         style={{
           height: "6%",
           transitionProperty: "width",
         }}
-        className="absolute left-0 w-0 group-hover:w-full bg-white duration-200 delay-75 ease-in mb-4"
+        className="absolute left-0 mb-4 w-0 bg-white delay-75 duration-200 ease-in group-hover:w-full"
       />
       <Typography
         fontFamily={"futura"}
@@ -31,12 +39,12 @@ export const NavItem: FC<NavItemProps> = ({ children, href = "/" }) => {
           transform: isOpen ? "translateY(0)" : "translateY(160px)",
         }}
         className={cn(
-          "transition-transform duration-300 ease-out delay-500 leading-none"
+          "leading-none transition-transform delay-500 duration-300 ease-out",
         )}
         fontSize={"D1"}
       >
         {children}
       </Typography>
-    </Link>
+    </li>
   );
 };

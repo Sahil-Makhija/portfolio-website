@@ -7,7 +7,12 @@ export function generateMetadata(): Metadata {
 }
 
 const AboutPage = () => {
-  return <>Contact Page (Not to be shown)</>;
+  return (
+    <span className="hidden">
+      About Sahil Makhija. Web Developer. Full-Stack Developer, Software
+      Engineer, Cybersecurity
+    </span>
+  );
 };
 
 export default AboutPage;

@@ -6,7 +6,7 @@ import { NavItem } from "./nav-item";
 export const NavbarOverlay: React.FC = () => {
   const isOpen = useNavbarState((state) => state.isOpen);
   return (
-    <div
+    <nav
       style={{
         height: "100vh",
         transitionProperty: "transform",
@@ -18,12 +18,12 @@ export const NavbarOverlay: React.FC = () => {
       }}
       className="fixed left-0 top-0 z-10 w-screen overflow-hidden bg-background ease-in"
     >
-      <div className="relative mx-auto flex h-full w-max flex-col items-center justify-evenly">
-        <NavItem href="#home">HOME</NavItem>
-        <NavItem>WORKS</NavItem>
-        <NavItem href="#about">ABOUT US</NavItem>
-        <NavItem>CONTACT</NavItem>
-      </div>
-    </div>
+      <ul className="relative mx-auto flex h-full w-max flex-col items-center justify-evenly">
+        <NavItem href="/">HOME</NavItem>
+        <NavItem href="/about">ABOUT ME</NavItem>
+        <NavItem href="/portfolio">WORKS</NavItem>
+        <NavItem href="/contact">CONTACT</NavItem>
+      </ul>
+    </nav>
   );
 };

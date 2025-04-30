@@ -8,10 +8,9 @@ import React, {
   useState,
 } from "react";
 
-import { cn } from "@/lib/utils";
+import { cn, scrollToTop } from "@/lib/utils";
 import { HTMLAttributes } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import Image from "next/image";
 import { PageIndicator } from "./page-indicator";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { LeftArrow } from "@/assets";
@@ -120,7 +119,7 @@ export const TransitionContainer: React.FC<TransitionContainerProps> = ({
       {!atBaseRoute && (
         <>
           <LeftArrow
-            onClick={() => router.back()}
+            onClick={() => scrollToTop(() => router.back())}
             className={cn(
               "fixed left-10 top-28 z-10 w-14 overflow-hidden",
               atBaseRoute ? "animate-slide-out" : "animate-slide-in",

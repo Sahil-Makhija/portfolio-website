@@ -48,6 +48,7 @@ export default function RootLayout({
         <PortfolioLayout />
         {/* <FollowCursor /> */}
         <OverlayNavbar />
+        {children}
       </body>
     </html>
   );
