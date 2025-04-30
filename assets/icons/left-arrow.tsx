@@ -24,12 +24,12 @@ export const LeftArrow: React.FC<LeftArrowProps> = ({
           fill="none"
           fill-rule="evenodd"
           stroke={color}
-          stroke-linecap="round"
+          strokeLinecap="round"
           transform="translate(2 1)"
         >
-          <path stroke-width="2" d="M0,15.5533333 L64,15.5533333"></path>
+          <path strokeWidth="2" d="M0,15.5533333 L64,15.5533333"></path>
           <polyline
-            stroke-width="2"
+            strokeWidth="2"
             points="15.556 0 0 15.556 15.556 31.111"
           ></polyline>
         </g>

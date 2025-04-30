@@ -1,5 +1,5 @@
 const ContactPage = () => {
-  return <>Contact Page (Not to be shown)</>;
+  return <span className="hidden">Contact page</span>;
 };
 
 export default ContactPage;
