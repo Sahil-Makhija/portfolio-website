@@ -32,16 +32,6 @@ export const AboutMe = () => {
             <div className="absolute left-0 top-0 h-1 w-24 rounded-e-sm rounded-s-sm bg-rose" />
             <div className="absolute bottom-0 right-0 h-1 w-24 rounded-e-sm rounded-s-sm bg-rose" />
           </div>
-          <Typography
-            fontFamily={"futura"}
-            fontSize={"h4"}
-            fontWeight={"regular"}
-            className="tracking-widest"
-          >
-            Driven by technology,
-            <br />
-            fueled by curiosity.
-          </Typography>
           <Button
             className="w-max"
             radius={"rounded"}
